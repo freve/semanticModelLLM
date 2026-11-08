@@ -1,0 +1,14 @@
+Actúa como un experto en Ciencia de Datos y Analítica Educativa.
+
+Crea un algoritmo de clasificación en Python mediante reglas heurísticas semánticas IF-THEN (sin utilizar librerías de Machine Learning ni ensembles como Gradient Boosting) para predecir el nivel de desempeño de los estudiantes (0: Bajo, 1: Medio, 2: Alto) utilizando el conjunto de datos de entrenamiento DataEarlyPrediction_Train.xlsx.
+Diseña la función `clasificar_estudiante_optimizado(nota1, nota2, nota3, intentos1)` incorporando principios cualitativos y pedagógicos de dominio sobre las siguientes reglas de negocio:
+1.	Reglas de Riesgo (Prioridad Máxima - Clase 0):
+   - Tolerancia Cero: Si el estudiante falló o no entregó la primera actividad (nota1 == 0.0), clasificarlo en riesgo alto (0) de inmediato, sin importar si se recuperó posteriormente.
+   - Rendimiento Insuficiente o Caída Final: Si el promedio general de laboratorios es menor a 3.0 o si presenta un colapso en el último laboratorio (nota3 < 2.0), clasificarlo en riesgo alto (0).
+2. Reglas de Excelencia (Clase 2):
+   - Consistencia de Alto Desempeño: Para obtener desempeño sobresaliente (2), se exige un promedio general alto (>= 4.4) acompañado de un buen inicio en la primera entrega (nota1 >= 3.8).
+   - Bonus por Persistencia/Esfuerzo: Si el estudiante alcanza un promedio alto (>= 4.3) y demuestra un esfuerzo masivo medido por persistencia en el primer laboratorio (intentos1 > 15), premiarlo con desempeño sobresaliente (2).
+3. Desempeño Medio (Clase 1):
+   - Si no cumple las condiciones de riesgo ni de excelencia, clasificar por defecto en Desempeño Medio (1).
+
+Incluye comentarios explicativos claros para cada bloque de reglas dentro del código
